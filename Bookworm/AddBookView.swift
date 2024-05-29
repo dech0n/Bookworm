@@ -36,14 +36,14 @@ struct AddBookView: View {
                 Section("Write a review") {
                     TextEditor(text: $review)
                     RatingView(rating: $rating)
-                }                    
-            }
-            
-            Section {
-                Button("Save") {
-                    let newBook = Book(title: title, author: author, genre: genre, review: review, rating: rating)
-                    modelContext.insert(newBook)
-                    dismiss()
+                }
+                
+                Section {
+                    Button("Save") {
+                        let newBook = Book(title: title, author: author, genre: genre, review: review, rating: rating)
+                        modelContext.insert(newBook)
+                        dismiss()
+                    }
                 }
             }
         }
