@@ -34,6 +34,7 @@ struct RatingView: View {
                 }
             }
         }
+        .buttonStyle(.plain)
     }
     
     
