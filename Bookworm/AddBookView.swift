@@ -1,5 +1,5 @@
 //
-//  AddBook.swift
+//  AddBookView.swift
 //  Bookworm
 //
 //  Created by Dechon Ryan on 5/29/24.
@@ -7,8 +7,9 @@
 
 import SwiftUI
 
-struct AddBook: View {
+struct AddBookView: View {
     @Environment(\.modelContext) var modelContext
+    @Environment(\.dismiss) var dismiss
     
     @State private var title = ""
     @State private var author = ""
@@ -46,6 +47,7 @@ struct AddBook: View {
                     Button("Save") {
                         let newBook = Book(title: title, author: author, genre: genre, review: review, rating: rating)
                         modelContext.insert(newBook)
+                        dismiss()
                     }
                 }
             }
@@ -55,5 +57,5 @@ struct AddBook: View {
 }
 
 #Preview {
-    AddBook()
+    AddBookView()
 }
