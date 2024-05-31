@@ -35,6 +35,7 @@ struct ContentView: View {
                             }
                         }
                     }
+                    .listRowBackground(book.rating == 1 ? Color.red : nil)
                 }
                 .onDelete(perform: deleteBooks)
             }
