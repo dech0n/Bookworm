@@ -31,6 +31,8 @@ struct DetailView: View {
                     .offset(x: -5, y: -5)
             }
             
+            Text("\(book.date.formatted(date: .abbreviated, time: .shortened))")
+                .padding()
             Text(book.author)
                 .font(.title)
             
@@ -39,6 +41,7 @@ struct DetailView: View {
             
             RatingView(rating: .constant(book.rating))
                 .font(.largeTitle)
+            
         }
         .navigationTitle(book.title)
         .navigationBarTitleDisplayMode(.inline)
